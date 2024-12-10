@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW 2020 (64 Bit) -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="91.44mm" height="91.44mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 9144 9144"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="55.2026mm" height="55.2026mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 5520.26 5520.26"
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
  <defs>
@@ -17,10 +17,12 @@ viewBox="0 0 9144 9144"
  </defs>
  <g id="Camada_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <circle class="fil0 str0" cx="4572" cy="4572" r="2760.13"/>
-  <g id="_2725037578512">
-   <line class="fil1 str1" x1="3134.71" y1="4868.6" x2="3921.85" y2= "5655.74" />
-   <line class="fil1 str1" x1="3799.22" y1="5677.03" x2="6009.28" y2= "3466.97" />
+  <g id="_1945631257424">
+   <circle class="fil0 str0" cx="2760.13" cy="2760.13" r="2700.87"/>
+   <g id="_2725037578512">
+    <line class="fil1 str1" x1="1353.7" y1="3050.36" x2="2123.94" y2= "3820.6" />
+    <line class="fil1 str1" x1="2003.94" y1="3841.43" x2="4166.55" y2= "1678.83" />
+   </g>
   </g>
  </g>
 </svg>

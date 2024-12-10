@@ -49,75 +49,111 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  
 }
 
-/* Estilos gerais e específicos aqui */
+
 .header {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  padding: 15px 0;
-  box-shadow: 0 4px 6px var(--shadow-color);
-}
-
-.header-content {
+  padding: 10px 20px; /* Menos espaçamento nas laterais */
+  box-shadow: 0 2px 8px var(--shadow-color); /* Sombra mais sutil */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
-/* Restante do CSS continua, removendo duplicações */
-
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .logo-container {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .logo {
-  width: 7vw;
+  width: 40px; /* Logo menor */
   height: auto;
-  margin-right: 50px;
 }
 
-.header h1 {
-  font-size: 1.5rem;
+.logo-container h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  white-space: nowrap; /* Impede quebra de linha */
+  color: var(--secondary-color);
 }
 
 .nav-links ul {
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
 }
 
 .nav-links ul li {
-  margin-left: 20px;
+  position: relative;
 }
 
 .nav-links ul li a {
   color: var(--secondary-color);
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: color var(--transition);
-
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 8px 12px; /* Mais área clicável */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
 }
 
 .nav-links ul li a:hover {
   color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Menu Mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Botão do menu para telas pequenas */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
 .hero-image {
   width: 100%;
-  height: 30vw;
   background-image: url('assets/photo.png');
   background-size: cover;
   background-position: top center;
   border-radius: var(--border-radius);
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  filter: brightness(0.8); /* Reduz o brilho para escurecer a imagem */
+  color: rgb(255, 255, 255);
 }
-
-
 
 .hero-image button {
   margin: 35px;
@@ -149,27 +185,26 @@ body {
   height: 24px;
 }
 
-.hero-image p{
-  text-wrap: nowrap;
-  margin: 0px;
-  padding: 0px;
-}
-
 .control_text {
   padding: 100px;
-  background-color: #33333344;
-  color: aliceblue;
   width: 100%;
-}
-
-.checkIcon {
-  width: 32px;
+  margin: 0 auto; /* Centraliza o conteúdo */
+  text-align: center; /* Centraliza o texto */
 }
 
 .control_text h1 {
-  font-size: 3.5rem;
-  align-self: center;
-  justify-self: center;
+  font-size: clamp(2rem, 5vw, 4rem); /* Ajusta a fonte com base no tamanho da tela */
+  line-height: 1.4;
+  word-wrap: break-word;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7); 
+}
+
+.control_text p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Texto ajustável com o tamanho da tela */
+  line-height: 1.6;
+  margin-top: 10px;
+  word-wrap: break-word; /* Evita transbordamento */
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7); /* Sombra para destacar */
 }
 
 .control_text button {
@@ -181,6 +216,9 @@ body {
   color: var(--primary-color);
   font-size: 1.2rem;
   cursor: pointer;
+  margin: 0 auto; /* Centraliza o botão */
+  display: block; /* Necessário para funcionar com margin auto */
+  margin-top: 20px;
 }
 
 .control_text button:hover {
@@ -189,63 +227,14 @@ body {
   transition: background-color var(--transition), color var(--transition);
 }
 
-.effect:hover {
-  transform: scale(1.03);
-}
 
-.about-section {
-  background-color: var(--about-bg-color);
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 6px var(--about-shadow-color);
-}
-
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-  justify-content: center;
-}
-
-.about-image {
-  width: 500px;
-  height: auto;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 6px var(--shadow-color);
-  object-fit: cover;
-}
-
-.about-text {
-  flex: 1;
-  font-size: 1rem;
-}
-
-.about-text h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: var(--primary-color);
-}
-
-.about-text p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-
-.about-text ul li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-  font-size: 1.2rem;
-}
 
 .checkIcon {
   width: 32px;
   height: 32px;
   margin-right: 10px;
 }
+
 
 .about-text p {
   line-height: 1.6;
@@ -288,6 +277,7 @@ body {
 
 .serv_imgs p {
   margin-top: 20px;
+
 }
 
 .serv_div_img {
@@ -329,96 +319,395 @@ blockquote cite {
   gap: 20px;
   margin: 20px 0;
 }
-/* Estilos responsivos */
-/* Estilos responsivos */
+
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background-size: cover; /* Faz o SVG cobrir toda a área */
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px; /* Adiciona espaço para o texto dentro do balão */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(25% - 20px);
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 85%; /* Mantém o texto dentro da área de imagem */
+  line-height: 1.6;
+  margin: 0px;
+  border-radius: 5px;
+  background-color: #ccd5df00;
+  
+}
+
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.testimonial-card p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 85%;
+  margin-top: 10px;
+}
+
+
+
+
+/* Estilo do Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.footer .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  width: 150px;
+  height: auto;
+}
+
+.footer-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-section ul li a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #4a90e2;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.social-icon img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  margin-top: 30px;
+}
+
+.footer-bottom p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* ------*/
+
+.benefit {
+  display: flex;
+  flex-direction: column;
+}
+
+.row_chack {
+  display: flex;
+}
+
+.row_chack p {
+  margin-top: 5px;
+}
+
+
+
 @media (max-width: 1024px) {
   .header-content {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 12vw;
+    margin-right: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.2rem;
     text-align: center;
   }
-  
+
   .nav-links ul {
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    margin-top: 10px;
   }
-  
+
+  .nav-links ul li {
+    margin: 10px 0;
+  }
+
   .hero-image {
-    height: 50vh;
-    background-position: center;
+    height: 50vw;
   }
-  
+
   .control_text {
     padding: 20px;
     text-align: center;
   }
-  
+
+  .control_text h1 {
+    font-size: 2.5rem;
+  }
+
+  .control_text button {
+    width: 150px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
   .about-content {
     flex-direction: column;
+    text-align: center;
   }
-  
+
   .about-image {
-    width: 100%;
-    max-width: 400px;
+    width: 50%;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+  }
+
+  .services {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .serv_imgs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .serv_div_img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .testimonial-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .testimonial-card {
+    flex-basis: calc(100% - 20px);
+    margin: 10px 0;
   }
 }
 
 @media (max-width: 768px) {
-  .header h1 {
-    font-size: 1.2rem;
+  .hero-image {
+    height: 60vw;
   }
-  
-  .nav-links ul li a {
-    font-size: 1rem;
+
+
+
+  .services h2 {
+    font-size: 2rem;
   }
-  
-  .control_text h1 {
-    font-size: 2.5rem;
+
+
+  .serv_div_img {
+    width: 150px; /* Ajuste o tamanho das divs */
+    height: 150px; /* Ajuste o tamanho das divs */
+    background-size: cover; /* Certifique-se de que a imagem preencha completamente o espaço */
+    background-position: center center; /* Alinha a imagem no centro da div */
+    border-radius: var(--border-radius);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
-  .control_text p {
-    font-size: 1rem;
+
+  .nav-links ul {
+    display: none; /* Oculta o menu por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    padding: 10px;
+    z-index: 1000;
   }
-  .services{
-   
+
+  .nav-links ul.active {
+    display: flex; /* Exibe o menu ao clicar no botão */
   }
-  .serv_div_img{
-    max-width: 190px;
-    height:190px ;
+
+  .menu-toggle {
+    display: block; /* Mostra o botão no mobile */
   }
-  .serv_imgs {
-    grid-template-columns: 1fr;
-   
+
+  .logo-container h1 {
+    font-size: 1.5rem; /* Reduz o tamanho do texto */
   }
-  
-  .testimonial-card {
+}
+
+/*---------*/
+
+ul, ol {
+  list-style-type: none; /* Remove os pontos */
+  padding-left: 0; /* Remove o espaço à esquerda */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+}
+
+
+
+
+/* Para telas com largura até 1023px */
+@media (max-width: 1080px) {
+  .serv_text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 90%; /* Aumentar para 90% para dar mais espaço ao conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo dentro da área */
+  }
+  .header-container {
+    flex-direction: row;
+  }
+
+
+  .nav-links ul {
+    display: none; /* Oculta o menu por padrão */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Ajuste para que o menu ocupe toda a largura da tela */
+    padding: 10px;
+    z-index: 1000; /* Garante que o menu fique sobre outros elementos */
+  }
+
+  .nav-links ul {
+    display: none; /* Oculta o menu por padrão */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;
+    padding: 10px;
+    flex-direction: column; /* Empilha os itens do menu em coluna */
+    gap: 15px; /* Adiciona espaçamento entre os itens */
+  }
+
+  .menu-toggle {
+    display: block; /* Exibe o botão de menu em dispositivos móveis */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+
+  .logo-container h1 {
+    font-size: 1.4rem; /* Reduz o tamanho do texto da logo em telas menores */
+  }
+
+  .control_text h1 {
+    font-size: 3rem; /* Ajusta o tamanho do título para telas médias */
+  }
+  .control_text p {
+    font-size: 1.3rem; /* Ajusta o tamanho do texto */
+  }
+}
+
+@media (max-width: 768px) {
+  .control_text h1 {
+    font-size: 2rem; /* Ajusta para telas menores */
+  }
+  .control_text p {
+    font-size: 1rem; /* Texto ajustado */
   }
 }
 
 @media (max-width: 480px) {
-  .hero-image {
-    height: 40vh;
-  }
-  
   .control_text h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Tamanho ainda menor para telas pequenas */
   }
-  
-  .control_text button {
-    width: 100%;
-    max-width: 250px;
-  }
-  
-  .about-text h2 {
-    font-size: 1.5rem;
-  }
-  
-  .about-content {
-    text-align: center;
-  }
-  
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
+  .control_text p {
+    font-size: 1rem; /* Texto ajustado para telas pequenas */
   }
 }
+
