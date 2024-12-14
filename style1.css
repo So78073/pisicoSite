@@ -44,6 +44,17 @@ body {
   background-color: var(--background-color);
 }
 
+.default {
+  margin: 50px 0px 50px 0px;
+}
+
+.default-bottom {
+  margin: 0px 0px 50px 0px;
+}
+
+.default-not {
+  margin: 0px 0px 0px 0px;
+}
 .container {
   width: 90%;
   max-width: 1200px;
@@ -51,7 +62,12 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   
+}
+
+.testimonials h2 {
+  margin: 0px;
 }
 
 
@@ -158,6 +174,7 @@ body {
 .hero-image button {
   margin: 35px;
   border: none;
+  width: 200px;
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
   font-size: 16px;
@@ -200,11 +217,12 @@ body {
 }
 
 .control_text p {
-  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Texto ajustável com o tamanho da tela */
+  font-size: clamp(1rem, 2.5vw, 1.5rem); 
   line-height: 1.6;
   margin-top: 10px;
-  word-wrap: break-word; /* Evita transbordamento */
-  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7); /* Sombra para destacar */
+  word-wrap: break-word; 
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7); 
+  width: 90%;
 }
 
 .control_text button {
@@ -251,10 +269,12 @@ body {
   text-align: center;
   padding: 1% 10% 1% 10%;
   gap: 30px;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .services h2 {
-  font-size: 3rem;
+  font-size: 3vw;
   margin-bottom: 20px;
 }
 
@@ -270,6 +290,8 @@ body {
 
 .serv_imgs {
   display: flex;
+  justify-items: center;
+  align-items: center;
   gap: 20px;
   max-width: 600px;
   margin: 0 auto;
@@ -387,6 +409,11 @@ blockquote cite {
 }
 
 
+.about-image {
+  width: 50%;
+  border-radius: 10px;
+  filter: brightness(0.8); 
+}
 
 
 /* Estilo do Footer */
@@ -444,6 +471,10 @@ blockquote cite {
   gap: 15px;
 }
 
+.border-radius {
+  border-radius: 50px;
+}
+
 .social-icon img {
   width: 30px;
   height: 30px;
@@ -464,8 +495,6 @@ blockquote cite {
   color: #ddd;
 }
 
-/* ------*/
-
 .benefit {
   display: flex;
   flex-direction: column;
@@ -479,9 +508,19 @@ blockquote cite {
   margin-top: 5px;
 }
 
-
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media (max-width: 1024px) {
+  .about-image {
+    width: 50%;
+    border-radius: 10px;
+    filter: brightness(0.8);
+    display: none; 
+  }
+
+  
+  
+
   .header-content {
     flex-wrap: wrap;
     justify-content: center;
@@ -510,6 +549,7 @@ blockquote cite {
   .hero-image {
     height: 50vw;
   }
+ 
 
   .control_text {
     padding: 20px;
@@ -520,20 +560,13 @@ blockquote cite {
     font-size: 2.5rem;
   }
 
-  .control_text button {
-    width: 150px;
-    height: 40px;
-    font-size: 1rem;
-  }
+
 
   .about-content {
     flex-direction: column;
     text-align: center;
   }
 
-  .about-image {
-    width: 50%;
-  }
 
   .about-text {
     font-size: 0.9rem;
@@ -542,12 +575,13 @@ blockquote cite {
   .services {
     flex-direction: column;
     padding: 20px 10px;
+
   }
 
-  .serv_imgs {
-    flex-wrap: wrap;
-    justify-content: center;
+  .services p{
+    display: none
   }
+
 
   .serv_div_img {
     width: 150px;
@@ -563,82 +597,14 @@ blockquote cite {
     flex-basis: calc(100% - 20px);
     margin: 10px 0;
   }
-}
 
-@media (max-width: 768px) {
-  .hero-image {
-    height: 60vw;
-  }
-
-
-
-  .services h2 {
-    font-size: 2rem;
-  }
-
-
-  .serv_div_img {
-    width: 150px; /* Ajuste o tamanho das divs */
-    height: 150px; /* Ajuste o tamanho das divs */
-    background-size: cover; /* Certifique-se de que a imagem preencha completamente o espaço */
-    background-position: center center; /* Alinha a imagem no centro da div */
-    border-radius: var(--border-radius);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .nav-links ul {
-    display: none; /* Oculta o menu por padrão */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 20px;
-    background-color: var(--primary-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    width: 200px;
-    padding: 10px;
-    z-index: 1000;
-  }
-
-  .nav-links ul.active {
-    display: flex; /* Exibe o menu ao clicar no botão */
-  }
-
-  .menu-toggle {
-    display: block; /* Mostra o botão no mobile */
-  }
-
-  .logo-container h1 {
-    font-size: 1.5rem; /* Reduz o tamanho do texto */
-  }
-}
-
-/*---------*/
-
-ul, ol {
-  list-style-type: none; /* Remove os pontos */
-  padding-left: 0; /* Remove o espaço à esquerda */
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-
-}
-
-
-
-
-/* Para telas com largura até 1023px */
-@media (max-width: 1080px) {
   .serv_text {
     display: flex;
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    width: 90%; /* Aumentar para 90% para dar mais espaço ao conteúdo */
-    margin: 0 auto; /* Centraliza o conteúdo dentro da área */
+    width: 90%; 
+    margin: 0 auto; 
   }
   .header-container {
     flex-direction: row;
@@ -646,14 +612,14 @@ ul, ol {
 
 
   .nav-links ul {
-    display: none; /* Oculta o menu por padrão */
+    display: none; 
     position: absolute;
     top: 60px;
     right: 20px;
     background-color: var(--primary-color);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 100%; /* Ajuste para que o menu ocupe toda a largura da tela */
+    width: 100%; 
     padding: 10px;
     z-index: 1000; /* Garante que o menu fique sobre outros elementos */
   }
@@ -693,21 +659,85 @@ ul, ol {
   }
 }
 
+  
+
 @media (max-width: 768px) {
+
+  .hero-image {
+    height: 60vw;
+  }
+
+  .services h2 {
+    font-size: 2rem;
+  }
+  
+
   .control_text h1 {
     font-size: 2rem; /* Ajusta para telas menores */
   }
   .control_text p {
-    font-size: 1rem; /* Texto ajustado */
+
+    font-size: 1rem;
+  }
+  
+  .nav-links {
+    display: none; /* Esconde o menu por padrão */
+    flex-direction: column;
+    background-color: #333; /* Escolha uma cor adequada */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex; /* Mostra o menu quando ativo */
+  }
+
+  .nav-links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .menu-toggle {
+    display: block; /* Mostra o botão apenas em telas pequenas */
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
+
+  .serv_imgs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .serv_div_img {
+    width: 210px;
+    height: 210px; 
+  }
+
+  .serv_text h2 {
+    font-size: 1rem;
+  }
+
   .control_text h1 {
-    font-size: 1.5rem; /* Tamanho ainda menor para telas pequenas */
+    font-size: 1.5rem; 
+    padding: 0px;
   }
+  
   .control_text p {
-    font-size: 1rem; /* Texto ajustado para telas pequenas */
+    display: none;
   }
-}
 
+  h1{
+    font-size: 10px;
+  }
+
+}
