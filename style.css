@@ -34,7 +34,7 @@
 
 html, body {
   width: 100%;
-  overflow-x: hidden; /* Solução para evitar o espaço branco à direita */
+  overflow-x: hidden; 
 }
 
 body {
@@ -77,8 +77,8 @@ body {
 .header {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  padding: 10px 20px; /* Menos espaçamento nas laterais */
-  box-shadow: 0 2px 8px var(--shadow-color); /* Sombra mais sutil */
+  padding: 10px 20px; 
+  box-shadow: 0 2px 8px var(--shadow-color); 
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -104,7 +104,7 @@ body {
 }
 
 .logo {
-  width: 40px; /* Logo menor */
+  width: 40px; 
   height: auto;
 }
 
@@ -112,7 +112,7 @@ body {
   font-size: 1.8rem;
  
   font-weight: bold;
-  white-space: nowrap; /* Impede quebra de linha */
+  white-space: nowrap; 
   color: var(--secondary-color);
 }
 
@@ -133,7 +133,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
-  padding: 8px 12px; /* Mais área clicável */
+  padding: 8px 12px; 
   transition: color 0.3s ease, background-color 0.3s ease;
   border-radius: 4px;
 }
@@ -143,7 +143,7 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Menu Mobile */
+
 .menu-toggle {
   display: none;
   background: none;
@@ -153,7 +153,7 @@ body {
   cursor: pointer;
 }
 
-/* Botão do menu para telas pequenas */
+
 .menu-toggle {
   display: none;
   background: none;
@@ -169,7 +169,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: brightness(0.8); /* Reduz o brilho para escurecer a imagem */
+  filter: brightness(0.8); 
   color: rgb(255, 255, 255);
 }
 
@@ -178,12 +178,12 @@ body {
 .control_text {
   padding: 100px;
   width: 100%;
-  margin: 0 auto; /* Centraliza o conteúdo */
-  text-align: center; /* Centraliza o texto */
+  margin: 0 auto; 
+  text-align: center;
 }
 
 .control_text h1 {
-  font-size: clamp(2rem, 5vw, 4rem); /* Ajusta a fonte com base no tamanho da tela */
+  font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.4;
   word-wrap: break-word;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
@@ -335,13 +335,28 @@ body {
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  transition: transform var(--transition) ease;
+  transition: transform var(--transition) ease, border-color 0.3s ease, opacity 0.3s ease;
   background-color: var(--hover-effect-color);
+  border: 3px solid transparent;
+  opacity: 1;
 }
 
 .serv_div_img:hover {
   transform: scale(1.05);
 }
+
+.serv_div_img.selected {
+  transform: scale(1.1); 
+  border-color: var(--primary-color); 
+  opacity: 1; 
+}
+
+.serv_div_img.not-selected {
+  opacity: 0.9;
+  transform: scale(1); 
+}
+
+
 
 
 blockquote {
@@ -379,10 +394,10 @@ blockquote cite {
 }
 
 .testimonial-card {
-  background-size: cover; /* Faz o SVG cobrir toda a área */
+  background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
-  padding: 40px 20px; /* Adiciona espaço para o texto dentro do balão */
+  padding: 40px 20px; 
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #333;
@@ -398,7 +413,7 @@ blockquote cite {
 .testimonial-card p {
   font-size: 1rem;
   color: #333;
-  max-width: 85%; /* Mantém o texto dentro da área de imagem */
+  max-width: 85%; 
   line-height: 1.6;
   margin: 0px;
   border-radius: 5px;
@@ -685,11 +700,11 @@ blockquote cite {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%; 
     padding: 10px;
-    z-index: 1000; /* Garante que o menu fique sobre outros elementos */
+    z-index: 1000;
   }
 
   .nav-links ul {
-    display: none; /* Oculta o menu por padrão */
+    display: none; 
     position: absolute;
     top: 60px;
     right: 20px;
@@ -698,12 +713,12 @@ blockquote cite {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;
     padding: 10px;
-    flex-direction: column; /* Empilha os itens do menu em coluna */
-    gap: 15px; /* Adiciona espaçamento entre os itens */
+    flex-direction: column; 
+    gap: 15px; 
   }
 
   .menu-toggle {
-    display: block; /* Exibe o botão de menu em dispositivos móveis */
+    display: block; 
     font-size: 2rem;
     background: none;
     border: none;
@@ -712,14 +727,14 @@ blockquote cite {
   }
 
   .logo-container h1 {
-    font-size: 1.4rem; /* Reduz o tamanho do texto da logo em telas menores */
+    font-size: 1.4rem;
   }
 
   .control_text h1 {
-    font-size: 3rem; /* Ajusta o tamanho do título para telas médias */
+    font-size: 3rem; 
   }
   .control_text p {
-    font-size: 1.3rem; /* Ajusta o tamanho do texto */
+    font-size: 1.3rem; 
   }
 }
 
@@ -737,7 +752,7 @@ blockquote cite {
   
 
   .control_text h1 {
-    font-size: 2rem; /* Ajusta para telas menores */
+    font-size: 2rem; 
   }
   .control_text p {
 
@@ -745,9 +760,9 @@ blockquote cite {
   }
   
   .nav-links {
-    display: none; /* Esconde o menu por padrão */
+    display: none; 
     flex-direction: column;
-    background-color: #333; /* Escolha uma cor adequada */
+    background-color: #333; 
     position: absolute;
     top: 100%;
     right: 0;
@@ -757,7 +772,7 @@ blockquote cite {
   }
 
   .nav-links.active {
-    display: flex; /* Mostra o menu quando ativo */
+    display: flex; 
   }
 
   .nav-links ul {
@@ -771,7 +786,7 @@ blockquote cite {
   }
 
   .menu-toggle {
-    display: block; /* Mostra o botão apenas em telas pequenas */
+    display: block; 
   }
 }
 

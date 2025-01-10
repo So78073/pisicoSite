@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr. João Silva - Psicólogo</title>
-  <link rel="stylesheet" href="https://so78073.github.io/pisicoSite/style1.css">
+  <link rel="stylesheet" href="https://so78073.github.io/pisicoSite/style.css">
 
 </head>
 <body>
@@ -47,36 +47,67 @@
 
   <section class="services default">
     <div class="serv_text">
-        <h2>Conheça nossos serviços</h2>
-        <p>Oferecemos uma ampla gama de serviços de terapia para ajudar você a lidar com diferentes desafios emocionais e psicológicos. Descubra como podemos contribuir para o seu bem-estar e qualidade de vida.</p>
+        <h2 id="service-title">Conheça nossos serviços</h2>
+        <p id="service-description">
+            Oferecemos uma ampla gama de serviços de terapia para ajudar você a lidar com diferentes desafios emocionais e psicológicos. Descubra como podemos contribuir para o seu bem-estar e qualidade de vida.
+        </p>
     </div>
 
     <div class="serv_imgs">
-        <div class="serv_div_img" style="background-image: url('https://so78073.github.io/pisicoSite/assets/terapiCards/ansiedade.png');" aria-label="Terapia para Ansiedade"></div>
-        <div class="serv_div_img" style="background-image: url('https://so78073.github.io/pisicoSite/assets/terapiCards/estresse.png');" aria-label="Terapia para Estresse"></div>
-        <div class="serv_div_img" style="background-image: url('https://so78073.github.io/pisicoSite/assets/terapiCards/infantil.png');" aria-label="Terapia Infantil"></div>
-        <div class="serv_div_img" style="background-image: url('https://so78073.github.io/pisicoSite/assets/terapiCards/casais.png');" aria-label="Terapia para Casais"></div>
+        <div 
+            class="serv_div_img" 
+            style="background-image: url('https://so78073.github.io/pisicoSite/assets/terapiCards/ansiedade.png');" 
+            aria-label="Terapia para Ansiedade"
+            data-title="Terapia para Ansiedade"
+            data-description="Nossa terapia para ansiedade ajuda você a identificar gatilhos e a desenvolver estratégias para viver de forma mais tranquila e equilibrada."
+        ></div>
+        <div 
+            class="serv_div_img" 
+            style="background-image: url('https://so78073.github.io/pisicoSite/assets/terapiCards/estresse.png');" 
+            aria-label="Terapia para Estresse"
+            data-title="Terapia para Estresse"
+            data-description="Com a terapia para estresse, você aprende a gerenciar a pressão do dia a dia e a criar momentos de calma e bem-estar."
+        ></div>
+        <div 
+            class="serv_div_img" 
+            style="background-image: url('https://so78073.github.io/pisicoSite/assets/terapiCards/infantil.png');" 
+            aria-label="Terapia Infantil"
+            data-title="Terapia Infantil"
+            data-description="A terapia infantil é dedicada ao bem-estar emocional das crianças, ajudando-as a enfrentar desafios de forma saudável e positiva."
+        ></div>
+        <div 
+            class="serv_div_img" 
+            style="background-image: url('https://so78073.github.io/pisicoSite/assets/terapiCards/casais.png');" 
+            aria-label="Terapia para Casais"
+            data-title="Terapia para Casais"
+            data-description="Na terapia para casais, ajudamos a melhorar a comunicação e a fortalecer os vínculos emocionais entre parceiros."
+        ></div>
     </div>
 </section>
+
 
   <!-- Seção Sobre Mim com imagem ao lado -->
   <section id="about" class="about-section default">
     <div class="container about-content">
         <div class="about-text">
-            <h2>Conheça nossa clínica</h2>
+            <h2>Sobre a Clínica</h2>
             <p>
-                A <strong>Clínica</strong> __ proporciona a oportunidade de pessoas consultarem com um psicólogo em qualquer lugar do mundo.<br><br>
-                Nosso atendimento é realizado em todo o Brasil através de chamadas de vídeo. Nossa equipe de profissionais está preparada para atender às suas necessidades.
+                Enfrentar desafios relacionados à autoestima e autonomia pode ser difícil, mas na <strong>Clínica __</strong>, estamos aqui para ajudar você a dar o primeiro passo rumo ao cuidado com sua saúde mental. Nossa abordagem é centrada na construção de uma autoimagem positiva e no fortalecimento da autoconfiança, sempre respeitando o ritmo e as necessidades de cada pessoa.
+            </p>
+            <p>
+                Nosso atendimento é realizado em todo o Brasil, por meio de chamadas de vídeo, garantindo que você receba apoio onde quer que esteja. Contamos com uma equipe de profissionais qualificados, comprometidos em proporcionar um ambiente de acolhimento e confiança, ideal para promover mudanças significativas na sua vida.
+            </p>
+            <p>
+                A terapia que oferecemos não se limita a resolver problemas momentâneos; buscamos ajudar você a se tornar a melhor versão de si mesmo, alcançando uma vida mais plena e equilibrada.
             </p>
             <blockquote>
-                "Nossa missão é cuidar de você, onde quer que esteja."<br>
-                <cite>pss </cite>
+                "A aceitação e o acolhimento são o solo fértil para que a mudança aconteça." <br>Nossa missão: cuidar de você, com empatia e profissionalismo, onde quer que esteja.<br>
+                <cite>Equipe Arthur H.S</cite>
             </blockquote>
         </div>
     </div>
-  </section>
-    <!-- Espaço para imagem grande -->    
-  </section>
+</section>
+
 
   <section id="benefits" class="benefits-section default">
     <div class="container benefits-content">
@@ -158,6 +189,6 @@
   <!-- Conteúdo adicional pode ser adicionado aqui -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="scripts.js"></script>
+  <script src="https://so78073.github.io/pisicoSite/scripts.js"></script>
 </body>
 </html>
